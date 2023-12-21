@@ -1,0 +1,26 @@
+<form [formGroup]="catalogoForm" (ngSubmit)="saveCatalogo()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="mat-50">
+      <mat-label>Tipo Catalogo</mat-label>
+      <mat-select formControlName="tipo_catalogo" (click)="ListarCatalogoE()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of CataUniCatalogo">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="mat-50">
+      <mat-label>Denominación</mat-label>
+      <input formControlName="denominacion" matInput>
+    </mat-form-field>
+
+
+  </div>
+  <div mat-dialog-actions>
+    <a (click)="closePopup()" mat-raised-button color="warn">Cancelar</a>
+    <!-- <button [mat-dialog-close]="closemessage" mat-raised-button mat-dialog-close color="accent">Cancelar</button> -->
+    <button [disabled]="catalogoForm.invalid" type="sumbit" mat-raised-button color="primary">Guardar</button>
+  </div>
+
+</form>
+

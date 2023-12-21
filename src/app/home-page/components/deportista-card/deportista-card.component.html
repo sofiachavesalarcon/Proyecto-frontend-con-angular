@@ -1,0 +1,61 @@
+
+
+
+<div class="contenedor-card">
+
+  <div class="card" *ngFor="let item of deportistaList">
+       <img src="{{item.imagen}}" alt="">
+       <h2 class="nombre">{{item.primer_nombre}} {{item.primer_apellido}}</h2>
+       <div class="descripcion">
+            <div class="fisico">
+                 <div>
+                      <span>AGE</span><span id="por">  Years</span>
+                 </div>
+                 <div>
+                      <span>SEX </span><span id="por">{{item.sexo}}</span>
+                 </div>
+
+                 <div>
+                      <span>ALT </span><span id="por">{{item.altura}} Cm</span>
+                 </div>
+
+                 <div>
+                      <span>PES </span><span id="por">{{item.peso}} Kg</span>
+                 </div>
+                 <div>
+                      <span>LAT </span><span id="por">{{item.lateralidad}}</span>
+                 </div>
+
+
+
+            </div>
+            <div class="tecnica">
+                 <div class="tecnica">
+                      <div>
+                           <span>SER </span><span id="por">70%</span>
+                      </div>
+                      <div>
+                           <span>REC </span><span id="por">80%</span>
+                      </div>
+
+                      <div>
+                           <span>BLQ </span><span id="por">80%</span>
+                      </div>
+
+                      <div>
+                           <span>DEF </span><span id="por">90%</span>
+                      </div>
+                      <div>
+                           <span>ATQ </span><span id="por">100%</span>
+                      </div>
+                 </div>
+            </div>
+       </div>
+
+       <div class="foter">
+            <p>{{item.posicion}}</p>
+       </div>
+  </div>
+
+  </div>
+

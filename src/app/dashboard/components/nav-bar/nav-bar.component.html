@@ -1,0 +1,71 @@
+<!--nav-bar-->
+<mat-toolbar class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>SportSphere</span>
+  <span class="example-spacer"></span>
+    <button (click)="badgeVisibility()" mat-icon-button>
+      <mat-icon matBadge="4"[matBadgeHidden]="badgevisible" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Cerrar sesion</span>
+    </button>
+</mat-toolbar>
+
+<!--Sidebar-->
+<mat-drawer-container>
+  <mat-drawer #drawer opened="true" mode="side">
+      <div>
+         <div class="icon">
+            <mat-icon class="icon-admin">account_circle</mat-icon>
+         </div>
+         <h3>ADMIN</h3>
+      </div>
+
+      <mat-nav-list>
+          <mat-list-item>
+            <button routerLink="deportista" routerLinkActive="active" mat-button>Deportista</button>
+          </mat-list-item>
+      </mat-nav-list>
+
+      <mat-nav-list>
+          <mat-list-item>
+            <button routerLink="deporte" routerLinkActive="active" mat-button>Deporte</button>
+          </mat-list-item>
+      </mat-nav-list>
+
+      <mat-nav-list class="color">
+          <mat-list-item>
+            <button routerLink="club" routerLinkActive="active" mat-button>Club</button>
+          </mat-list-item>
+      </mat-nav-list>
+
+      <mat-nav-list>
+          <mat-list-item>
+            <button routerLink="ranking" routerLinkActive="active" mat-button>Ranking</button>
+          </mat-list-item>
+      </mat-nav-list>
+
+      <mat-nav-list>
+          <mat-list-item>
+            <button routerLink="contacto" routerLinkActive="active" mat-button>Contacto</button>
+          </mat-list-item>
+      </mat-nav-list>
+
+      <mat-nav-list>
+          <mat-list-item>
+            <button routerLink="catalogo" routerLinkActive="active" mat-button>Catalogo</button>
+          </mat-list-item>
+      </mat-nav-list>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="text-align: center;min-height: 600px;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+
+</mat-drawer-container>
+

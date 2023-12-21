@@ -1,0 +1,73 @@
+<mat-card>
+  <mat-card-header>
+    <mat-form-field>
+      <input matInput (keyup)="filterChange($event)"  placeholder="Buscar" >
+    </mat-form-field>
+    <span class="example-spacer"></span>
+    <div class="add-button">
+      <button (click)="AgregarRanking()" class="color-button" mat-raised-button >Agregar Ranking</button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevator-z8">
+
+      <ng-container matColumnDef="Id Deportista">
+        <th mat-header-cell *matHeaderCellDef>Deportista</th>
+        <td mat-cell *matCellDef="let element">{{element.deportista_ranking}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Bloqueos">
+        <th mat-header-cell *matHeaderCellDef>Bloqueos</th>
+        <td mat-cell *matCellDef="let element">{{element.bloqueos}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Ataques">
+        <th mat-header-cell *matHeaderCellDef>Ataques</th>
+        <td mat-cell *matCellDef="let element">{{element.ataques}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Defensas">
+        <th mat-header-cell *matHeaderCellDef>Defensas</th>
+        <td mat-cell *matCellDef="let element">{{element.defensas}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Servicios">
+        <th mat-header-cell *matHeaderCellDef>Servicios</th>
+        <td mat-cell *matCellDef="let element">{{element.servicios}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Canastas">
+        <th mat-header-cell *matHeaderCellDef>Canastas</th>
+        <td mat-cell *matCellDef="let element">{{element.canastas}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Goles">
+        <th mat-header-cell *matHeaderCellDef>Goles</th>
+        <td mat-cell *matCellDef="let element">{{element.goles}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Atajadas">
+        <th mat-header-cell *matHeaderCellDef>Atajadas</th>
+        <td mat-cell *matCellDef="let element">{{element.atajadas}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+
+          <button (click)="EditarRanking(element.id_ranking)" mat-icon-button class="button-edit"><mat-icon>edit</mat-icon></button>
+          <button (click)="EliminarRanking(element.id_ranking)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row, columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+  <br>
+  <mat-card-footer>
+    <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+  </mat-card-footer>
+</mat-card>
+
+

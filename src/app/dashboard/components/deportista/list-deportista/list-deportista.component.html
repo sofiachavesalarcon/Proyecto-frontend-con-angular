@@ -1,0 +1,82 @@
+<mat-card>
+  <mat-card-header>
+    <mat-form-field>
+      <input matInput (keyup)="filterChange($event)"  placeholder="Buscar" >
+    </mat-form-field>
+    <span class="example-spacer"></span>
+    <div class="add-button">
+      <button (click)="AgregarDeportista()" class="color-button" mat-raised-button >Agregar Deportista</button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevator-z8">
+
+      <ng-container matColumnDef="Nombres">
+        <th mat-header-cell *matHeaderCellDef>Nombres</th>
+        <td mat-cell *matCellDef="let element">{{element.primer_nombre}} {{element.segundo_nombre}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Apellidos">
+        <th mat-header-cell *matHeaderCellDef>Apellidos</th>
+        <td mat-cell *matCellDef="let element">{{element.primer_apellido}} {{element.segundo_apellido}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Fecha-Nacimiento">
+        <th mat-header-cell *matHeaderCellDef>Fecha de Nacimiento</th>
+        <td mat-cell *matCellDef="let element">{{element.fecha_nacimiento | date }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Peso">
+        <th mat-header-cell *matHeaderCellDef>Peso</th>
+        <td mat-cell *matCellDef="let element">{{element.peso}} kg </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Altura">
+        <th mat-header-cell *matHeaderCellDef>Altura</th>
+        <td mat-cell *matCellDef="let element">{{element.altura}} cm</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Lateralidad">
+        <th mat-header-cell *matHeaderCellDef>Lateralidad</th>
+        <td mat-cell *matCellDef="let element">{{element.lateralidad}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Sexo">
+        <th mat-header-cell *matHeaderCellDef>Sexo</th>
+        <td mat-cell *matCellDef="let element">{{element.sexo}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Club">
+        <th mat-header-cell *matHeaderCellDef>Club</th>
+        <td mat-cell *matCellDef="let element">{{element.club}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Deporte">
+        <th mat-header-cell *matHeaderCellDef>Deporte</th>
+        <td mat-cell *matCellDef="let element">{{element.deporte}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Posicion">
+        <th mat-header-cell *matHeaderCellDef>Posición</th>
+        <td mat-cell *matCellDef="let element">{{element.posicion}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+
+          <button (click)="EditarDeportista(element.id_deportista)" mat-icon-button class="button-edit"><mat-icon>edit</mat-icon></button>
+          <button (click)="EliminarDeportista(element.id_deportista)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row, columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+  <br>
+  <mat-card-footer>
+    <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+  </mat-card-footer>
+</mat-card>
+

@@ -1,0 +1,88 @@
+<form [formGroup]="deportistaForm" enctype="multipart/form-data" (ngSubmit)="saveDeportista()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="mat-50">
+      <mat-label>Primer nombre</mat-label>
+      <input formControlName="primer_nombre" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Segundo nombre</mat-label>
+      <input formControlName="segundo_nombre" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Primer apellido</mat-label>
+      <input formControlName="primer_apellido" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Segundo apellido</mat-label>
+      <input formControlName="segundo_apellido" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Imagen</mat-label>
+      <ngx-mat-file-input formControlName="imagen" name="imagen" accept="image/*"></ngx-mat-file-input>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Fecha Nacimiento</mat-label>
+      <input formControlName="fecha_nacimiento" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Peso</mat-label>
+      <input formControlName="peso" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Altura</mat-label>
+      <input formControlName="altura" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Lateralidad</mat-label>
+      <mat-select formControlName="lateralidad" (click)="listComboLateralidad()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of comboLateralidad">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Sexo</mat-label>
+      <mat-select formControlName="sexo" (click)="listComboSexo()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of comboSexo">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Club</mat-label>
+      <mat-select formControlName="club" (click)="listComboClub()">
+        <mat-option [value]="item.id_club" *ngFor="let item of comboClub">{{item.nombre_club}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Deporte</mat-label>
+      <mat-select formControlName="deporte" (click)="listComboDeporte()">
+        <mat-option [value]="item.id_deporte" *ngFor="let item of comboDeporte">{{item.nombre_deporte}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50 posicion-side">
+      <mat-label>Posicion</mat-label>
+      <mat-select formControlName="posicion" (click)="listComboPosicion()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of comboPosicion">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <a (click)="closePopup()" mat-raised-button color="warn">Cancelar</a>
+    <!-- <button [mat-dialog-close]="closemessage" mat-raised-button mat-dialog-close color="accent">Cancelar</button> -->
+    <button [disabled]="deportistaForm.invalid" type="sumbit" mat-raised-button color="primary">Guardar</button>
+  </div>
+
+</form>

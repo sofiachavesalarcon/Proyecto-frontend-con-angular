@@ -1,0 +1,9 @@
+.navbar-brand{
+  font-size: 25px;
+  font-weight: bold;
+}
+.navbar{
+  background-color: #cc3917;
+  height: 12%;
+  font-size: 16px;
+}

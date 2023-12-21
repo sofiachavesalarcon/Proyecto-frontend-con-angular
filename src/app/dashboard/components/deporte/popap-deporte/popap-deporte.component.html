@@ -1,0 +1,37 @@
+<form [formGroup]="deporteForm" (ngSubmit)="saveDeporte()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="mat-50">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre_deporte" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoria_deporte" (click)="listComboCategoria()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of comboCategoria">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Popularidad</mat-label>
+      <input formControlName="popularidad" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Club</mat-label>
+      <mat-select formControlName="club" (click)="listComboClubes()">
+        <mat-option [value]="item.id_club" *ngFor="let item of comboClubes">{{item.nombre_club}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <a (click)="closePopup()" mat-raised-button color="warn">Cancelar</a>
+    <!-- <button [mat-dialog-close]="closemessage" mat-raised-button mat-dialog-close color="accent">Cancelar</button> -->
+    <button [disabled]="deporteForm.invalid" type="sumbit" mat-raised-button color="primary">Guardar</button>
+  </div>
+
+</form>
+

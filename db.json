@@ -1,0 +1,129 @@
+{
+  "deportista": [
+    {
+      "primer_nombre": "laura",
+      "segundo_nombre": "Sofía",
+      "primer_apellido": "Alarcon",
+      "segundo_apellido": "Chaves",
+      "imagen": {},
+      "fecha_nacimiento": "2023-10-23T05:00:00.000Z",
+      "peso_kg": 54,
+      "altura_cm": 160,
+      "lateralidad": "Diestro",
+      "sexo": "F",
+      "club": "Udec",
+      "deporte": "Voleibol",
+      "posicion": "Armador",
+      "id": 4
+    },
+    {
+      "primer_nombre": "anderson",
+      "segundo_nombre": "arturo",
+      "primer_apellido": "marin",
+      "segundo_apellido": "lozada",
+      "imagen": {},
+      "fecha_nacimiento": "2023-10-17T05:00:00.000Z",
+      "peso_kg": 80,
+      "altura_cm": 180,
+      "lateralidad": "Diestro",
+      "sexo": "M",
+      "club": "Mustangs",
+      "deporte": "Voleibol",
+      "posicion": "Central",
+      "id": 5
+    },
+    {
+      "primer_nombre": "nohora",
+      "segundo_nombre": "liliana",
+      "primer_apellido": "alarcon",
+      "segundo_apellido": "gaitan",
+      "imagen": {},
+      "fecha_nacimiento": "1981-01-27T05:00:00.000Z",
+      "peso_kg": 52,
+      "altura_cm": 155,
+      "lateralidad": "Diestro",
+      "sexo": "F",
+      "club": "Cedro",
+      "deporte": "Voleibol",
+      "posicion": "Auxiliar",
+      "id": 6
+    }
+  ],
+  "deporte": [
+    {
+      "nombre_deporte": "baloncesto",
+      "categoria_deporte": "femenina",
+      "popularidad": "alta",
+      "club": "Mustangs",
+      "id": 1
+    },
+    {
+      "nombre_deporte": "futbol",
+      "categoria_deporte": "femenina",
+      "popularidad": "alta",
+      "club": "Mustangs",
+      "id": 2
+    },
+    {
+      "nombre_deporte": "natacion",
+      "categoria_deporte": "femenina",
+      "popularidad": "baja",
+      "club": "Udec",
+      "id": 3
+    },
+    {
+      "nombre_deporte": "tenis",
+      "categoria_deporte": "masculina",
+      "popularidad": "baja",
+      "club": "Cedro",
+      "id": 4
+    },
+    {
+      "nombre_deporte": "hvbyuv",
+      "categoria_deporte": "femenina",
+      "popularidad": "baja",
+      "club": "Mustangs",
+      "id": 5
+    }
+  ],
+  "club": [
+    {
+      "nombre_club": "alfa y omega",
+      "tecnico_club": "nicolas",
+      "ciudad": "Bogota",
+      "id": 1
+    },
+    {
+      "nombre_club": "mustangs",
+      "tecnico_club": "roglin",
+      "ciudad": "Bogota",
+      "id": 2
+    },
+    {
+      "nombre_club": "cedro",
+      "tecnico_club": "Rodrigo",
+      "ciudad": "Bogota",
+      "id": 3
+    },
+    {
+      "nombre_club": "supernova",
+      "tecnico_club": "Kristian",
+      "ciudad": "Chia",
+      "id": 4
+    }
+  ],
+  "universal": [],
+  "ranking": [
+    {
+      "deportista_ranking": "Sofia",
+      "bloqueos": "",
+      "ataques": "4",
+      "defensas": "",
+      "servicios": "",
+      "canastas": "5",
+      "goles": "",
+      "atajadas": "",
+      "id": 1
+    }
+  ]
+}

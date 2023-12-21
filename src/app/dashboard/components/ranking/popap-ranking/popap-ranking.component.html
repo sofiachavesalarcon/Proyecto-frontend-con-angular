@@ -1,0 +1,56 @@
+<form [formGroup]="rankingForm" (ngSubmit)="saveRanking()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Id Deportista</mat-label>
+      <mat-select formControlName="deportista_ranking" (click)="listComboDeportista()">
+        <mat-option [value]="item.id_deportista" *ngFor="let item of comboDeportista">{{item.primer_nombre}} {{item.primer_apellido}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Bloqueos</mat-label>
+      <input formControlName="bloqueos" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Ataques</mat-label>
+      <input formControlName="ataques" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Defensas</mat-label>
+      <input formControlName="defensas" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Servicios</mat-label>
+      <input formControlName="servicios" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Canastas</mat-label>
+      <input formControlName="canastas" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Goles</mat-label>
+      <input formControlName="goles" matInput type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Atajadas</mat-label>
+      <input formControlName="atajadas" matInput type="number">
+    </mat-form-field>
+
+
+  </div>
+  <div mat-dialog-actions>
+    <a (click)="closePopup()" mat-raised-button color="warn">Cancelar</a>
+    <!-- <button [mat-dialog-close]="closemessage" mat-raised-button mat-dialog-close color="accent">Cancelar</button> -->
+    <button type="sumbit" mat-raised-button color="primary">Guardar</button>
+  </div>
+
+</form>
+

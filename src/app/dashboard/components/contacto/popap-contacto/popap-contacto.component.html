@@ -1,0 +1,33 @@
+<form [formGroup]="contactoForm" (ngSubmit)="saveContacto()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="mat-50">
+      <mat-label>Deportista</mat-label>
+      <mat-select formControlName="deportista_contacto" (click)="ListarComboDeportista()">
+        <mat-option [value]="item.id_deportista" *ngFor="let item of comboDeportista">{{item.primer_nombre}} {{item.primer_apellido}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Tipo Contacto</mat-label>
+      <mat-select formControlName="tipo_contacto" (click)="ListarComboTipContacto()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of comboTipContacto">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Contacto</mat-label>
+      <input formControlName="contacto" matInput>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <a (click)="closePopup()" mat-raised-button color="warn">Cancelar</a>
+    <!-- <button [mat-dialog-close]="closemessage" mat-raised-button mat-dialog-close color="accent">Cancelar</button> -->
+    <button [disabled]="contactoForm.invalid" type="sumbit" mat-raised-button color="primary">Guardar</button>
+  </div>
+
+</form>
+
+

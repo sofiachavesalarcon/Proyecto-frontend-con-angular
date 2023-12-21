@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <p>Bienvenido de nuevo! </p>
+    </div>
+    <form (ngSubmit)="onLogin()" name="loginForm" formGroup="loginForm">
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Correo</mat-label>
+          <input
+            formControlName="correo"
+            matInput
+            placeholder="Ingrese correo elctrónico" required
+          />
+          <mat-error *ngIf="!loginForm.controls['email'].valid">
+              Email is required
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <span>
+          <a class="text-link" class="aLink" >¿Olvidaste tu contraseña?</a>
+        </span>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+          <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>
+              {{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+      </button>
+      <mat-error *ngIf="!loginForm.controls['password'].valid">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      </div>
+      <button mat-flat-button (click)="login()">Iniciar sesión</button>
+    </form>
+
+    <div class="button-row">
+      <p>¿No tienes cuenta?<a href="">Registrate</a></p>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,29 @@
+mat-toolbar{
+  background-color: #cc3917;
+  color: white;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-drawer{
+  width: 170px;
+  color: #2b2823;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  margin: 15px;
+
+}
+h3{
+  text-align: center;
+  font-weight: bold;
+}
+.icon-admin{
+  font-size:50px;
+  width: auto;
+  height: auto;
+
+}

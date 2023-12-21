@@ -1,0 +1,29 @@
+<form [formGroup]="clubForm" (ngSubmit)="saveClub()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="mat-50">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre_club" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Tecnico</mat-label>
+      <input formControlName="tecnico_club" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="mat-50">
+      <mat-label>Ciudad</mat-label>
+      <mat-select formControlName="ciudad" (click)="listComboCiudad()">
+        <mat-option [value]="item.id_catalogo" *ngFor="let item of comboCiudad">{{item.denominacion}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <a (click)="closePopup()" mat-raised-button color="warn">Cancelar</a>
+    <!-- <button [mat-dialog-close]="closemessage" mat-raised-button mat-dialog-close color="accent">Cancelar</button> -->
+    <button [disabled]="clubForm.invalid" type="sumbit" mat-raised-button color="primary">Guardar</button>
+  </div>
+
+</form>
+
